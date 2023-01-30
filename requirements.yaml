@@ -8,10 +8,14 @@ dependencies:
   - ipython # vscode jupyter notebook
   - notebook # jupyter notebook
   - pandas # vscode
-  - pytorch::pytorch
-  - pytorch::torchaudio # pytorch
+  - conda-forge::pytorch # aarch64 support
+  # - pytorch::torchaudio # pytorch (no aarch64 support)
   - pytorch::torchvision # pytorch
-  - python>=3.9 # ?
-  #- libgcc-ng #>=11.2.0 # pytorch
+  - python>=3.9
+  - tensorflow
+  - matplotlib # create figures
+  - numpy # everything numbers
+  - scikit-learn # machine learning and data mining
+  - seaborn # statistical data visualization
   - pip
   # - pip:

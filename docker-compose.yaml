@@ -4,11 +4,11 @@ services:
     # user: "${UID}:${GID}" # default user within container
     image: local/jupyternotebookm2:latest
     container_name: jupyternotebookm2
-    # command: /miniconda/envs/juno/bin/jupyter notebook --allow-root --port=8888 --ip 0.0.0.0 --no-browser
+    command: /miniconda/envs/juno/bin/jupyter notebook --allow-root --port=8888 --ip 0.0.0.0 --no-browser
     # command: /bin/sh -c "while sleep 1000; do :; done" # keep container open while running
-    command: bash
-    stdin_open: true
-    tty: true
+    # command: bash
+    # stdin_open: true
+    # tty: true
     ports: # Host:Container
       - "8888:8888" # Jupyter Notebook
       - "8889:8889" # Jupyter Notebook
@@ -28,8 +28,9 @@ services:
         source: ./vscode-container-ext/.vscode-server-insiders
         target: /home/vscode/.vscode-server-insiders
         
-    deploy:
-      resources:
-        reservations:
-          devices:
-              - capabilities: [gpu]
+    # not yet supported on M1/M2
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #           - capabilities: [gpu]

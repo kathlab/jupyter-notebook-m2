@@ -9,7 +9,7 @@ ARG CONDADIR="/miniconda"
 ARG CONDAENV="juno"
 ARG CONDA_PREFIX=${CONDADIR}/envs/${CONDAENV}
 ARG CONDADEPS="requirements.yaml"
-ARG CONDASETUP=Miniconda3-py310_22.11.1-1-Linux-x86_64.sh
+ARG CONDASETUP=Miniconda3-py39_22.11.1-1-Linux-aarch64.sh
 # ARG CONDASETUP=Miniconda3-latest-Linux-x86_64.sh
 ARG CONDAURL=https://repo.anaconda.com/miniconda/${CONDASETUP}
 ARG CONDA_PYTHON_VERSION=3.10
@@ -22,7 +22,7 @@ ENV LD_LIBRARY_PATH=${CONDA_PREFIX}/lib/:$LD_LIBRARY_PATH
 RUN apt update && apt install -y ${PACKAGES}
 
 # install conda
-ADD --checksum=sha256:00938c3534750a0e4069499baf8f4e6dc1c2e471c86a59caa0dd03f4a9269db6 ${CONDAURL} /
+ADD --checksum=sha256:031b6c52060bb75e930846c0a66baa91db8196f0d97fd32f3822c54db6b7c76a ${CONDAURL} /
 RUN chmod a+x /${CONDASETUP}
 RUN /bin/bash /${CONDASETUP} -b -p ${CONDADIR} # /bin/bash workaround for defect shellscript
 
