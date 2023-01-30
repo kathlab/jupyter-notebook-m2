@@ -4,18 +4,18 @@ channels:
   - pytorch
 dependencies:
   - conda-forge::ncurses # fixes: libtinfo.so.6: no version information available (required by bash)
+  - conda-forge::pytorch # aarch64 support
   - ipykernel # vscode jupyter notebook
   - ipython # vscode jupyter notebook
-  - notebook # jupyter notebook
-  - pandas # vscode
-  - conda-forge::pytorch # aarch64 support
-  # - pytorch::torchaudio # pytorch (no aarch64 support)
-  - pytorch::torchvision # pytorch
-  - python>=3.9
-  - tensorflow
   - matplotlib # create figures
+  - notebook # jupyter notebook
   - numpy # everything numbers
+  - pandas # vscode
+  - python>=3.9
+  - pytorch::torchvision # pytorch
   - scikit-learn # machine learning and data mining
   - seaborn # statistical data visualization
+  - tensorflow
+  # - pytorch::torchaudio # pytorch (no aarch64 support)
   - pip
   # - pip:
